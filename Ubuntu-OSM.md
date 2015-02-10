@@ -82,6 +82,7 @@ SELECT * FROM osm_point WHERE natural is not null;
 It will give the following error
 >ERROR:  syntax error at or near "is"  
 >LINE 1: SELECT * FROM osm_point where natural is not null;  
+
 the problem with this command is that natural is part of the Postgresql functions so instead osm have create natural as "natural". So by doing the following command:
 ```
 SELECT * FROM osm_point WHERE "natural" is not null;
