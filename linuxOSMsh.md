@@ -2,3 +2,9 @@
 ```
   createdb -U postgres $DB_NAME
 ```
+
+######Execute Command without logging into database
+```
+ psql --dbname $SUB_DB_NAME -c "$1" -U postgres
+ Where $1 is the SQL statement
+```
