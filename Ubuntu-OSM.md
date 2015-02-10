@@ -73,6 +73,7 @@ An example:
 ```
 SELECT AddGeometryColumn ('barrier','way',4623,'POLYGON',2);
 ```
+
 ######Cannot select natural issues
 When i try to do the following commnad in SQL command line:
 ```
@@ -88,3 +89,9 @@ the problem with this command is that natural is part of the Postgresql function
 SELECT * FROM osm_point WHERE "natural" is not null;
 ```
 This should display only the natural where it is not null
+
+######Conversion of PostgreSQL/PostGIS data to Shapefiles
+source:http://gis.stackexchange.com/questions/55206/how-can-i-get-a-shapefile-from-a-postgis-query
+```
+pgsql2shp -f <path to output shapefile> -h <hostname> -u <username> -P <password> databasename "<query>"
+```
