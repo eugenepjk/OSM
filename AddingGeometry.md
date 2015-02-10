@@ -1,7 +1,7 @@
 Use: I wanted to transfer data from the main tables(e.g. osm_point)
 PostgreSQL/PostGIS adding of column for 'way' in other tables. I was trying to find out how to create a column for a new table with the way data that we get when we extract out the data from the osm files. Using the following code in the database command line (if you have entered into the database to type the command) we can add a new column for geometry data type for 'way'.
 
-SELECT AddGeometryColumn ('my_table','column_name',int_srid,'type',dimension);
+*bold* SELECT AddGeometryColumn ('my_table','column_name',int_srid,'type',dimension);
 
 my_table: Give a designated table name
 column_name: Give a designated column name
