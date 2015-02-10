@@ -17,5 +17,7 @@ type: This refers to the geometric type of the table you are using
 Example: POINT, POLYGON, MULTISTRING, LINES, etc.
       
 dimension: This refers to the coordinate type simply(x,y,z)
+
 2 - refers to using coordinate x, y
+
 3 - refers to using coordinate x, y, z
