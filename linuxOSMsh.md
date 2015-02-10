@@ -1,4 +1,4 @@
-#######Creating database
+######Creating database
 ```
   createdb -U postgres $DB_NAME
 ```
