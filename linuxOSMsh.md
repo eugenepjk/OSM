@@ -33,3 +33,9 @@ Do take note of the postgresql/postgis version number. The location of the file 
  psql -U postgres -d $DB_NAME -f /usr/share/postgresql/9.3/contrib/postgis-2.1/postgis.sql 
  psql -U postgres -d $DB_NAME -f /usr/share/postgresql/9.3/contrib/postgis-2.1/spatial_ref_sys.sql
 ```
+
+######Allow SQL to handle hstore datatype
+In PostgreSQL database we have to create an extension for hstore before we can assign it as a datatype for tags.
+```
+CREATE EXTENSION hstore;
+```
