@@ -2,11 +2,15 @@
 source: http://wiki.openstreetmap.org/wiki/PostGIS/Installation#Ubuntu_14.04_LTS  
 I had some trouble installing Postgresql/Postgis on my virtual ubuntu. I research around and found out the osm site have the
 best way to install both at the same time on ubuntu. This works perfectly as i require Postgis to allow my database to import the require geospatial data.
-``` sudo apt-get install postgresql postgresql-contrib postgis postgresql-9.3-postgis-2.1```
+```
+sudo apt-get install postgresql postgresql-contrib postgis postgresql-9.3-postgis-2.1
+```
 
 ######Installing osm2pgsql to allow style.lua usage
 if you use the normal command as such: 
-``` sudo apt-get install osm2pgsql```
+```
+sudo apt-get install osm2pgsql
+```
 you will notice that you aren't allow to use the argument --tag-transform-script. But by using this method of installing osm2pgsql will allow you to install osm2pgsql directly from the osm2pgsql github which enable --tag-transform-script straight away :
 ```
 git clone git://github.com/openstreetmap/osm2pgsql.git
@@ -18,19 +22,29 @@ sudo make
 sudo make install
 ```
 to see if the --tag-transform-script is avaliable give the following command:
-``` osm2pgsql -v -h```
+```
+osm2pgsql -v -h
+```
 
 ######Creating database
-``` createdb -U postgres $DB_NAME```
+``` 
+createdb -U postgres $DB_NAME
+```
 
 ######Droping database
-``` dropdb -U postgres $DB_NAME```
+``` 
+dropdb -U postgres $DB_NAME
+```
 
 ######Execute Command without logging into database
-``` psql --dbname $DB_NAME -c "$1" -U postgres -> Where $1 is the SQL statement```
+``` 
+psql --dbname $DB_NAME -c "$1" -U postgres -> Where $1 is the SQL statement
+```
 
 ######Entering database
-``` psql -U postgres $DB_NAME```
+``` 
+psql -U postgres $DB_NAME
+```
 
 ######Making a spatial database
 Do take note of the postgresql/postgis version number. The location of the file will defer from there.
@@ -41,7 +55,9 @@ Do take note of the postgresql/postgis version number. The location of the file 
 
 ######Allow SQL to handle hstore datatype
 In PostgreSQL database we have to create an extension for hstore before we can assign it as a datatype for tags.
-```CREATE EXTENSION hstore;```
+```
+CREATE EXTENSION hstore;
+```
 
 ######Adding of Geometry datatype in SQL
 source:http://postgis.net/docs/AddGeometryColumn.html  
@@ -55,15 +71,21 @@ SELECT AddGeometryColumn ('my_table','column_name',int_srid,'type',dimension);
   dimension: this refers to the coordinate type(2-[x,y] /3-[x,y,z])
 ```
 An example:
-```SELECT AddGeometryColumn ('barrier','way',4623,'POLYGON',2);```
+```
+SELECT AddGeometryColumn ('barrier','way',4623,'POLYGON',2);
+```
 ######Cannot select natural issues
 When i try to do the following commnad in SQL command line:
-```SELECT * FROM osm_point WHERE natural is not null;```
+```
+SELECT * FROM osm_point WHERE natural is not null;
+```
 It will give the following error
 >ERROR:  syntax error at or near "is"  
 >LINE 1: SELECT * FROM osm_point where natural is not null;  
 >                                              ^  
 
 the problem with his command is that natural is part of the Postgresql functions so instead osm have create natural as "natural". So by doing the following command:
-```SELECT * FROM osm_point WHERE "natural" is not null;```
+```
+SELECT * FROM osm_point WHERE "natural" is not null;
+```
 This should display only the natural where it is not null
