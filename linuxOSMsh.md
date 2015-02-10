@@ -13,3 +13,8 @@
  psql --dbname DB_NAME -c "$1" -U postgres
  Where $1 is the SQL statement
 ```
+
+######Entering database
+```
+ psql -U postgres $DB_NAME
+```
