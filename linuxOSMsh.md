@@ -17,3 +17,9 @@
 ```
  psql -U postgres $DB_NAME
 ```
+
+######Making a spatial database
+```
+ psql -U postgres -d $DB_NAME -f /usr/share/postgresql/9.3/contrib/postgis-2.1/postgis.sql 
+ psql -U postgres -d $DB_NAME -f /usr/share/postgresql/9.3/contrib/postgis-2.1/spatial_ref_sys.sql
+```
