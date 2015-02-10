@@ -10,7 +10,7 @@ if you use the normal command as such:
 ```
 sudo apt-get install osm2pgsql
 ```
-you will notice that you aren't allow to use the argument --tag-transform-script. But by using this method of installing osm2pgsql will allow you to install osm2pgsql directly from the osm2pgsql github which enable --tag-transform-script straight away :
+you will notice that you aren't allow to use the argument --tag-transform-script. I use the following installation procedure instead which allows the direct installation from osm github site. This allows me to use the arguement --tag-transform-script immediately.
 ```
 git clone git://github.com/openstreetmap/osm2pgsql.git
 sudo apt-get install autoconf automake libtool make g++ libboost-dev libboost-system-dev libboost-filesystem-dev libboost-thread-dev libxml2-dev libgeos-dev libgeos++-dev libpq-dev libbz2-dev libproj-dev protobuf-c-compiler libprotobuf-c0-dev lua5.2 liblua5.2-dev libboost-all-dev
