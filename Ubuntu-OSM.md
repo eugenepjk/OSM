@@ -21,7 +21,7 @@ sudo ./configure --with-boost-libdir=/usr/lib/x86_64-linux-gnu
 sudo make
 sudo make install
 ```
-To see if it have been installed try to use this command
+to see if the --tag-transform-script is avaliable give the following command:
 ```
 osm2pgsql -v -h
 ```
