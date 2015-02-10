@@ -1,3 +1,12 @@
+######Installing PostgreSQL/PostGIS on Ubuntu
+I had some trouble installing Postgresql/Postgis on my virtual ubuntu. I research around and found out the osm site have the
+best way to install both at the same time on ubuntu. This works perfectly as i require Postgis to allow my database to import the require geospatial data. The website is as follows:
+http://wiki.openstreetmap.org/wiki/PostGIS/Installation#Ubuntu_14.04_LTS
+```
+sudo apt-get install postgresql postgresql-contrib postgis postgresql-9.3-postgis-2.1
+```
+
+
 ######Creating database
 ```
   createdb -U postgres $DB_NAME
