@@ -5,8 +5,26 @@ http://wiki.openstreetmap.org/wiki/PostGIS/Installation#Ubuntu_14.04_LTS
 ```
 sudo apt-get install postgresql postgresql-contrib postgis postgresql-9.3-postgis-2.1
 ```
-
-
+######Installing osm2pgsql to allow style.lua usage
+if you use the normal command as such: 
+```
+sudo apt-get install osm2pgsql
+```
+you will notice that you aren't allow to use the argument --tag-transform-script. But by using this method of installing osm2pgsql will allow you to install osm2pgsql directly from the osm2pgsql github which enable --tag-transform-script straight away :
+```
+sudo apt-get install git <- ensure git is installed
+git clone git://github.com/openstreetmap/osm2pgsql.git
+sudo apt-get install autoconf automake libtool make g++ libboost-dev libboost-system-dev libboost-filesystem-dev libboost-thread-dev libxml2-dev libgeos-dev libgeos++-dev libpq-dev libbz2-dev libproj-dev protobuf-c-compiler libprotobuf-c0-dev lua5.2 liblua5.2-dev libboost-all-dev
+cd /osm2pgsql
+sudo ./autogen.sh
+sudo ./configure --with-boost-libdir=/usr/lib/x86_64-linux-gnu
+sudo make
+sudo make install
+```
+To see if it have been installed try to use this command
+```
+osm2pgsql -v -h
+```
 ######Creating database
 ```
   createdb -U postgres $DB_NAME
