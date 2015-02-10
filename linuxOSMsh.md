@@ -1,4 +1,4 @@
 #######Creating database
-'''Shell Script
+```Shell Script
   createdb -U postgres $DB_NAME
-'''
+```
