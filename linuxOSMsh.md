@@ -19,7 +19,7 @@ sudo apt-get install postgresql postgresql-contrib postgis postgresql-9.3-postgi
 
 ######Execute Command without logging into database
 ```
- psql --dbname DB_NAME -c "$1" -U postgres -> Where $1 is the SQL statement
+ psql --dbname $DB_NAME -c "$1" -U postgres -> Where $1 is the SQL statement
 ```
 
 ######Entering database
