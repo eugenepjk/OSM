@@ -1,5 +1,5 @@
 ######Installing PostgreSQL/PostGIS on Ubuntu
-source: http://wiki.openstreetmap.org/wiki/PostGIS/Installation#Ubuntu_14.04_LTS
+source: http://wiki.openstreetmap.org/wiki/PostGIS/Installation#Ubuntu_14.04_LTS  
 I had some trouble installing Postgresql/Postgis on my virtual ubuntu. I research around and found out the osm site have the
 best way to install both at the same time on ubuntu. This works perfectly as i require Postgis to allow my database to import the require geospatial data.
 ```
@@ -61,7 +61,7 @@ CREATE EXTENSION hstore;
 ```
 
 ######Adding of Geometry datatype in SQL
-source:http://postgis.net/docs/AddGeometryColumn.html
+source:http://postgis.net/docs/AddGeometryColumn.html  
 I would like to spilt my data from the bulk of osm table to more comprehensive table in another database. To allow my table to accept geometry as a datatype we have to ensure that you have a spatial database(can be seen above). After that we can enter the following in a SQL commandline:
 ```
 SELECT AddGeometryColumn ('my_table','column_name',int_srid,'type',dimension);
