@@ -3,7 +3,7 @@ PostgreSQL/PostGIS adding of column for 'way' in other tables. I was trying to f
 
 **SELECT AddGeometryColumn ('my_table','column_name',int_srid,'type',dimension);**
 
-my_table: Give a designated table name
+my_table: Give a designated table name\n
 column_name: Give a designated column name
 int_srid: Give the srid of the geometry that it will reproduce on given command.
           Example: 4623, 900913
