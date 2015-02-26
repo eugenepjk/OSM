@@ -167,5 +167,5 @@ mkdir my_share_folder
 sudo mount -t vboxsf share my_share_folder
 
 #Unmounting Share folder
-sudo umount share
+sudo umount my_share_folder
 ```
