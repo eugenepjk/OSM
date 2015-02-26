@@ -136,8 +136,12 @@ pgsql2shp -f <path to output shapefile> -h <hostname> -u <username> -P <password
 
 ######Conversion of PostgreSQL/PostGIS data to Shapefiles/GPGK using OGR2OGR
 source:http://giswiki.hsr.ch/HowTo_OGR2OGR
+As i am using schemas to categorise my table to be different from the public schema which includes the osm_point, osm_polygon and osm_line. This command will enable anyone to extract the data without the huge command line for multiple tables.
 ```
---code--
+#GPGK
+ogr2ogr -f GPKG filename.gpkg PG:"dbname='dbname' user='postgres' password='postgres' port=5432 schemas=myschema" -clipsrc xmin ymin xmax ymax  
+#SHP
+ogr2ogr -f "ESRI Shapefile" filename PG:"dbname='dbname' user='postgres' password='postgres' port=5432 schemas=myschema" -clipsrc xmin ymin xmax ymax
 ```
 
 ######Postgresql options
@@ -146,4 +150,9 @@ source:http://giswiki.hsr.ch/HowTo_OGR2OGR
 \d table_name <-this list the tables columns
 \dt <- this list the tables that is contained in the database
 
+```
+
+######ZIP directory in ubuntu
+```
+zip -rq compress_filename.zip directory_name
 ```
