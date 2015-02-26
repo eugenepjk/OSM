@@ -156,3 +156,16 @@ ogr2ogr -f "ESRI Shapefile" filename PG:"dbname='dbname' user='postgres' passwor
 ```
 zip -rq compress_filename.zip directory_name
 ```
+
+######Mounting/unmounting shared folder in Ubuntu VirtualBox
+```
+#Mount Share Folder
+mkdir name_of_directory_to_store_sharefile
+sudo mount -t vboxsf [name_of_sharefile_in_the_Vbox_settings] [name_of_directory_to_store_sharefile]
+Example:
+mkdir my_share_folder
+sudo mount -t vboxsf share my_share_folder
+
+#Unmounting Share folder
+sudo umount share
+```
