@@ -25,9 +25,35 @@ to see if the --tag-transform-script is avaliable give the following command:
 osm2pgsql -v -h
 ```
 
+######Enable postgres to access database
+source:https://help.ubuntu.com/10.04/serverguide/postgresql.html, http://www.postgresql.org/docs/9.3/static/auth-pg-hba-conf.html  
+Error Message: psql: FATAL:  Peer authentication failed for user "postgres"  
+This require you to change the file /etc/postgresql/9.3/main/pg_hba.conf.  
+1) Go to terminal and enter the following:
+```
+sudo -u postgres psql template1
+ALTER USER postgres with encrypted password 'your_password';
+```
+NOTE: I am not sure if this is needed but it is good practice is always assign the password for your root DB  
+2) Open the file /etc/postgresql/9.3/main/pg_hba.conf
+```
+sudo gedit /etc/postgresql/9.3/main/pg_hba.conf
+```
+change the following:
+```
+local   all         postgres                          trust
+```
+The reason why i change to trust for me because i am doing testing on my linux computer. So i do not want to enter my password just for that sake. The list of authentication types are:
+```
+trust/reject/md5/password/gss/sspi/krb5/ident/peer/ldap/raius/cert/pam
+```
+3) After that restart your postgresql to take effect
+```
+sudo /etc/init.d/postgresql restart
+```
+
 ######Installing ubuntugis unstable on ubuntu
-source:https://launchpad.net/~ubuntugis/+archive/ubuntu/ubuntugis-unstable
-source:http://trac.osgeo.org/ubuntugis/wiki/UbuntuGISRepository
+source:https://launchpad.net/~ubuntugis/+archive/ubuntu/ubuntugis-unstable, http://trac.osgeo.org/ubuntugis/wiki/UbuntuGISRepository
 ```
 sudo apt-get install python-software-properties
 sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable
@@ -112,4 +138,12 @@ pgsql2shp -f <path to output shapefile> -h <hostname> -u <username> -P <password
 source:http://giswiki.hsr.ch/HowTo_OGR2OGR
 ```
 --code--
+```
+
+######Postgresql options
+```
+\q <- this is to quit from the sql command prompt
+\d table_name <-this list the tables columns
+\dt <- this list the tables that is contained in the database
+
 ```
