@@ -27,6 +27,7 @@ osm2pgsql -v -h
 
 ######Installing ubuntugis unstable on ubuntu
 source:https://launchpad.net/~ubuntugis/+archive/ubuntu/ubuntugis-unstable
+       http://trac.osgeo.org/ubuntugis/wiki/UbuntuGISRepository
 ```
 sudo apt-get install python-software-properties
 sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable
