@@ -94,3 +94,8 @@ source:http://gis.stackexchange.com/questions/55206/how-can-i-get-a-shapefile-fr
 ```
 pgsql2shp -f <path to output shapefile> -h <hostname> -u <username> -P <password> databasename "<query>"
 ```
+######Installing ubuntugis unstable on ubuntu
+source:http://gis.stackexchange.com/questions/55206/how-can-i-get-a-shapefile-from-a-postgis-query
+```
+pgsql2shp -f <path to output shapefile> -h <hostname> -u <username> -P <password> databasename "<query>"
+```
