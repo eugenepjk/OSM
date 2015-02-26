@@ -135,7 +135,7 @@ pgsql2shp -f <path to output shapefile> -h <hostname> -u <username> -P <password
 ```
 
 ######Conversion of PostgreSQL/PostGIS data to Shapefiles/GPGK using OGR2OGR
-source:http://giswiki.hsr.ch/HowTo_OGR2OGR
+source:http://giswiki.hsr.ch/HowTo_OGR2OGR  
 As i am using schemas to categorise my table to be different from the public schema which includes the osm_point, osm_polygon and osm_line. This command will enable anyone to extract the data without the huge command line for multiple tables.
 ```
 #GPGK
