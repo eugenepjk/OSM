@@ -6,7 +6,7 @@ sudo apt-get install postgresql postgresql-contrib postgis postgresql-9.3-postgi
 ```
 
 ######Installing osm2pgsql to allow style.lua usage
-if you use the normal command as such: 
+**IF you use the normal command as such**: 
 ```
 sudo apt-get install osm2pgsql
 ```
@@ -23,6 +23,13 @@ sudo make install
 to see if the --tag-transform-script is avaliable give the following command:
 ```
 osm2pgsql -v -h
+```
+
+######Installing ubuntugis unstable on ubuntu
+source:https://launchpad.net/~ubuntugis/+archive/ubuntu/ubuntugis-unstable
+```
+sudo apt-get install python-software-properties
+sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable
 ```
 
 ######Creating database
@@ -43,6 +50,11 @@ psql --dbname $DB_NAME -c "$1" -U postgres -> Where $1 is the SQL statement
 ######Entering database
 ``` 
 psql -U postgres $DB_NAME
+```
+
+######Execute the sql files and retrieve and output in a file
+``` 
+psql -U postgres -f $FILENAME -o $OUTPUT_FILENAME $DB_NAME
 ```
 
 ######Making a spatial database
@@ -94,8 +106,4 @@ source:http://gis.stackexchange.com/questions/55206/how-can-i-get-a-shapefile-fr
 ```
 pgsql2shp -f <path to output shapefile> -h <hostname> -u <username> -P <password> databasename "<query>"
 ```
-######Installing ubuntugis unstable on ubuntu
-source:https://launchpad.net/~ubuntugis/+archive/ubuntu/ubuntugis-unstable
-```
---code--
-```
+
