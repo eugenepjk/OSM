@@ -108,3 +108,8 @@ source:http://gis.stackexchange.com/questions/55206/how-can-i-get-a-shapefile-fr
 pgsql2shp -f <path to output shapefile> -h <hostname> -u <username> -P <password> databasename "<query>"
 ```
 
+######Conversion of PostgreSQL/PostGIS data to Shapefiles/GPGK using OGR2OGR
+source:http://giswiki.hsr.ch/HowTo_OGR2OGR
+```
+--code--
+```
