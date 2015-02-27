@@ -144,14 +144,6 @@ ogr2ogr -f GPKG filename.gpkg PG:"dbname='dbname' user='postgres' password='post
 ogr2ogr -f "ESRI Shapefile" filename PG:"dbname='dbname' user='postgres' password='postgres' port=5432 schemas=myschema" -clipsrc xmin ymin xmax ymax
 ```
 
-######Postgresql options
-```
-\q <- this is to quit from the sql command prompt
-\d table_name <-this list the tables columns
-\dt <- this list the tables that is contained in the database
-
-```
-
 ######ZIP directory in ubuntu
 ```
 zip -rq compress_filename.zip directory_name
